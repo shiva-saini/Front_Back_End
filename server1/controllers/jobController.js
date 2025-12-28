@@ -1,3 +1,4 @@
+
 import { nanoid } from "nanoid";
 import Job from '../models/JobModel.js';
 let jobs = [
