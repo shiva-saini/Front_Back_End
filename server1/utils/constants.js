@@ -17,3 +17,8 @@ export const JOB_SORT_BY = {
   DESCENDING: 'z-a',
 };
 export const DEFAULT_JOB_LOCATION = 'my city';
+
+export const ROLES = {
+  USER: 'user',
+  ADMIN: 'admin',
+};
