@@ -6,9 +6,11 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 import morgan from "morgan";
 import jobRouter from "./routes/jobRouter.js";
+import authRouter from "./routes/authRouter.js";
 import mongoose from "mongoose";
 import errorHandlerMiddleware from "./middleware/errorHandlerMiddleware.js";
 import { body, validationResult } from "express-validator";
+
 
 app.use(express.json());
 if (process.env.NODE_ENV === "development") {
@@ -50,6 +52,8 @@ app.post(
 );
 
 app.use("/api/v1", jobRouter);
+app.use("/api/v1", authRouter);
+
 
 app.use("*", (req, res) => {
   res.status(404).json({ message: "Route not found" });
